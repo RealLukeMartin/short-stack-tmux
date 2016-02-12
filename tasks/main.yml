@@ -3,4 +3,4 @@
   homebrew: name=tmux state=latest
   
 - name: create this-is-a-test.txt
-  file: path=~/this-is-a-test.tx state=touch
+  file: path=~/this-is-a-test.txt state=touch
