@@ -1,33 +1,6 @@
 ---
 - name: ensures tmux is installed/updated
   homebrew: name=tmux state=latest
-
-- name: ensure tmux.conf exists
-  copy: src=tmux.conf dest=~/.tmux.conf
-
-- name: ensure copy/paste support (reattach-to-user-namespace) is installed/updated
-  homebrew: name=reattach-to-user-namespace state=latest
-
-- name: ensure common tmux configuration is installed
-  copy: src={{ item }} dest={{ stack_d }}
-  with_items:
-    - tmux.tmux
-    - solarized.tmux
-    - tmux.bundle
-  notify: vim bundle install
-
-- name: ensure tmux zsh configuration exists
-  copy: src=tmux.zsh dest={{ stack_d }}
-
-- name: ensure ~/Library/Fonts directory exists
-  file: path=~/Library/Fonts state=directory
-
-- name: ensure caskroom/cask is tapped so that brew cask can be installed
-  homebrew_tap: tap=caskroom/cask state=present
-
-- name: ensure brew-cask is installed/updated
-  homebrew: name=brew-cask state=latest
-
-- name: ensure caskroom/fonts is tapped
-  homebrew_tap: tap=caskroom/fonts state=present
-
+  
+- name: create this-is-a-test.txt
+  file: path=~/this-is-a-test.tx state=touch
